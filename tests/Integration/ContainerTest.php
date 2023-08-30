@@ -39,7 +39,7 @@ class ContainerTest extends TestCase
 
     public function testMariaDB(): void
     {
-        $container = MariaDBContainer::make();
+        $container = MariaDBContainer::make(version: 'lts');
         $container->withMariaDBDatabase('foo');
         $container->withMariaDBUser('bar', 'baz');
 
