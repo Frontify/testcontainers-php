@@ -15,11 +15,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    
+
     - name: Setup PHP with PECL extension
       uses: shivammathur/setup-php@v2
       with:
-        php-version: '8.1'
+        php-version: '8.0'
         extensions: redis, pgsql
 
     - name: Install dependencies
@@ -27,9 +27,9 @@ jobs:
 
     - name: Run test suite
       run: composer run integration
-      
+
     - name: Run cs
       run: composer run cs
-      
+
     - name: Run phpstan
       run: composer run phpstan
